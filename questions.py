@@ -1,4 +1,5 @@
 import random
+import string;
 
 words = [
     "python",
@@ -37,7 +38,11 @@ while attempts > 0:
 
     letter = input("Ingresá una letra: ")
 
-    if letter in guessed:
+    #SOLUCION DEL BuG 7.1;
+    if len(letter) != 1 or letter not in string.ascii_letters:
+        print("Entrada no valida.")
+
+    elif letter in guessed:
         print("Ya usaste esa letra.")
     elif letter in word:
         guessed.append(letter)
