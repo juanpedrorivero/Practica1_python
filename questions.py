@@ -1,18 +1,20 @@
 import random
-import string;
+import string
 
-words = [
-    "python",
-    "programa",
-    "variable",
-    "funcion",
-    "bucle",
-    "cadena",
-    "entero",
-    "lista",
-]
+words = {"Lenguajes" : ["python"],
+        "Conceptos de programacion" : ["variable","funcion","bucle","programa"],
+        "Tipos de datos" : ["cadena", "entero", "lista"]}
 
-word = random.choice(words)
+while True:
+    print("Categorias disponibles: ",words.keys())  #Mostrar las categorias disdponibles
+    categoria = input("Ingrese que categoria desea: ")
+
+    if categoria in words:
+        word = random.choice(words[categoria])
+        break
+    else:
+        print("Categoria desconocida.")
+
 guessed = []
 attempts = 6
 puntaje = 0
